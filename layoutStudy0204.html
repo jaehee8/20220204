@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      box-sizing: border-box;
+
+    }
+    h1, h2 {
+      font-size: inherit;
+      font-weight: normal;
+    }
+
+    #one {
+      width: 45rem;
+      height: 45rem;
+      border-radius: 50%;
+      background-color: #ddd;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    #container {
+      width: 100vw;
+      height: 100vh;
+      /* border: 1px solid red; */
+      box-sizing: border-box;
+      /* 플렉스 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #eee;
+    }
+    #container > div {
+      display: flex;
+      flex: 1;
+    }
+    #container div:nth-child(1) {
+      z-index: 1;
+    }
+    #textbox {
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      text-align: justify;
+      background-color: rgba(184, 184, 184, 0.2);
+      height: 100%;
+      z-index: 2;
+    }
+    #textbox h2,
+    #textbox p {
+      display: block;
+      margin: 1rem 0;
+      color: #333;
+    }
+    #textbox hr {
+      width: 1px;
+      height: 70vh;
+      /* background-color: #ccc; */
+    }
+    
+
+    #text {
+      height: 100%;
+      position: relative;
+      z-index: 3;
+      align-items: flex-end;
+      /* overflow: hidden; */
+    }
+    #text h1 {
+      font-size: 20rem;
+      font-weight: bold;
+      color: rgba(184, 184, 184, 0.6);
+      transform: rotate(-90deg);
+      line-height: 1;
+      /* 제어하기 어려웠습니다. */
+      position: absolute;
+      top: 33vh;
+      right: -23vw;
+    }
+    #text img {
+      background-image: url(./images/shadow.png);
+      background-repeat: no-repeat;
+      background-position: 100% 95%;
+    }
+
+    #menubox {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(184, 184, 184, 0.5);
+      backdrop-filter: blur(10px);
+      z-index: 4;
+    }
+  </style>
+</head>
+<body>
+  <div id="one"></div>
+  <div id="container">
+    <div></div>
+    <div id="textbox">
+      <hr>
+      <h2>Lorem Ipsum</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non dolor lacinia, egestas lorem eu, eleifend lacus. Phasellus non nulla efficitur, condimentum dui sit amet, tristique leo. Donec tristique laoreet turpis, quis posuere enim aliquet aliquam.</p>
+    </div>
+    <div id="text">
+      <h1>Lorem</h1>
+      <div>
+        <img src="images/model.png" alt="모델">
+      </div>
+    </div>
+    <div id="menubox">
+      <div></div>
+    </div>
+  </div>
+</body>
+</html>
